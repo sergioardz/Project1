@@ -83,7 +83,7 @@ $("#random").on("click", function (event) {
             $("#r_beerphoto").attr("src", beer.labels.medium);
         }
         else {
-            $("#r_beerphoto").attr("src", "../images/nobeerimg.png");
+            $("#r_beerphoto").attr("src", "assets/images/nobeerimg.png");
         }
 
         // update the html - description
