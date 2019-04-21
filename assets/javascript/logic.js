@@ -34,7 +34,7 @@ const fixedIP = "154.16.91.131";
 const apiKeyIP = "at_knMW8P4hXMF72fVn0z8jG2ZnwPsAy";
 
 // Query for GEO API + Console LOG
-var queryURLGeoIP = "https://geo.ipify.org/api/v1?" + apiKeyIP + "&ipAddress=" + fixedIP + "&=json";
+var queryURLGeoIP = "https://geo.ipify.org/api/v1?" + apiKeyIP + "&ipAddress=" + fixedIP + "&=jsonp";
 console.log("queryURLGeoIP: " + queryURLGeoIP);
 // -------------------------------------------------------------------------------------------------------------
 // Code Snippet for CURRENT LOCATION logic
@@ -71,7 +71,7 @@ function currentIPLocation() {
                 });
             });
         })
-}
+
 
 // 2 different API Keys (same one) just sintaxis purposes, from BreweryDB API
 const apikey = "/?key=9968a2f544553322a8a49f3fb2916c09";
@@ -137,7 +137,9 @@ function getLocations() {
                     $("<td>").text(response.data[i].longitude),
                 )
                 $("#resultscontainer").append(newRow);
+
                 // Series of If's to prevent duplicating values on the different arrays
+                
                 if (allLocationsIds.includes(response.data[i].id) === false) {
                     allLocationsIds.push(response.data[i].id);
                 }
@@ -269,3 +271,6 @@ $(".action").click(function () {
     $("#resultscontainer").show(500);
 
 })
+
+
+
