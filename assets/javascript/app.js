@@ -80,7 +80,7 @@ $("#current").on("click", function (event) {
                 console.log("city: " + response.location.city);
                 console.log("latitude : " + response.location.lat);
                 console.log("longitude : " + response.location.lng);
-                console.log("---------------------------------------------");
+                // console.log("---------------------------------------------");
 
                 // Store Latitude and Longitude as variables
                 myLat = response.location.lat;
@@ -115,9 +115,9 @@ $("#current").on("click", function (event) {
 
                     // insert google map and stuff
                     var map;
-                    marker;
-                    service;
-                    infowindow;
+                    var marker;
+                    var service;
+                    var infowindow;
                     var myLatLng = { lat: minDistAwayLat, lng: minDistAwayLng };
                     var auxquery = minDistAwayLocName + " " + minDistAwayLocality + ", " + minDistAwayRegion;
                     console.log(auxquery);
