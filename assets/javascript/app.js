@@ -9,7 +9,7 @@ window.onload = function () {
     $("#beerresultcontainer").hide();
 
     // app version
-    console.log("app v5");
+    console.log("app v6");
 };
 
 // ! beer icon thingy
@@ -115,9 +115,9 @@ $("#current").on("click", function (event) {
 
                     // insert google map and stuff
                     var map;
-                    // var marker;
-                    // var service;
-                    var infowindow;
+                    marker;
+                    service;
+                    infowindow;
                     var myLatLng = { lat: minDistAwayLat, lng: minDistAwayLng };
                     var auxquery = minDistAwayLocName + " " + minDistAwayLocality + ", " + minDistAwayRegion;
                     console.log(auxquery);
