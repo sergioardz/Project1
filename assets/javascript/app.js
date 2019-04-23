@@ -88,6 +88,7 @@ $("#current").on("click", function (event) {
 
                 // Run a GetJSON from locations.json to get the closest location from current one
                 $.getJSON("assets/json/locations.json", function (response) {
+                    var unit = "M";
                     for (i = 0; i < response.data.length; i++) {
                         var D = distance(myLat, myLng, response.data[i].latitude, response.data[i].longitude, unit);
                         response.data[i].distAway = D;
