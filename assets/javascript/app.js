@@ -80,7 +80,7 @@ $("#current").on("click", function (event) {
                 console.log("city: " + response.location.city);
                 console.log("latitude : " + response.location.lat);
                 console.log("longitude : " + response.location.lng);
-                console.log("---------------------------------------------");
+                // console.log("---------------------------------------------");
 
                 // Store Latitude and Longitude as variables
                 myLat = response.location.lat;
