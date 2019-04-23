@@ -59,7 +59,7 @@ $("#current").on("click", function (event) {
         var myPublicIp = response;
         console.log("my public ip: " + myPublicIp);
 
-        // another ajax call to get the city, latitude and longitude based no the public ip
+        // another ajax call to get the city, latitude and longitude based on the public ip
         $.ajax({
             url: "https://geo.ipify.org/api/v1",
             dataType: "json",
@@ -82,77 +82,150 @@ $("#current").on("click", function (event) {
                 console.log("longitude : " + response.location.lng);
                 console.log("---------------------------------------------");
 
+                // Store Latitude and Longitude as variables
+                myLat = response.location.lat;
+                myLng = response.location.lng;
+
+                // Run a GetJSON from locations.json to get the closest location from current one
+                $.getJSON("locations.json", function (response) {
+                    for (i = 0; i < response.data.length; i++) {
+                        var D = distance(myLat, myLng, response.data[i].latitude, response.data[i].longitude, unit);
+                        response.data[i].distAway = D;
+                    }
+                    var minDistAway = Number.POSITIVE_INFINITY;
+                    var minDistAwayLocName;
+                    for (i = 0; i < response.data.length; i++) {
+                        if (response.data[i].distAway < minDistAway) {
+                            minDistAway = response.data[i].distAway;
+                            minDistAwayLocName = response.data[i].name;
+                            minDistAwayLocality = response.data[i].locality;
+                            minDistAwayRegion = response.data[i].region;
+                            minDistAwayLat = response.data[i].latitude;
+                            minDistAwayLng = response.data[i].longitude;
+                        }
+                    }
+                    console.log(minDistAway);
+                    console.log(minDistAwayLocName);
+                    console.log(minDistAwayLocality);
+                    console.log(minDistAwayRegion);
+                    console.log(minDistAwayLat);
+                    console.log(minDistAwayLng);
+                    $("#currentcontainer").append("<p>The closest location is in: " + minDawayLity + ", " + minDawayReg + "</p>");
+
+                    // insert google map and stuff
+                    var map;
+                    var service;
+                    var infowindow;
+                    var myLatLng = { lat: minDawayLat, lng: minDawayLng };
+                    var auxquery = minDawayLoc + " " + minDawayLity + ", " + minDawayReg;
+                    console.log(auxquery);
+                    var closeLoc = new google.maps.LatLng(minDawayLat, minDawayLng);
+                    infowindow = new google.maps.InfoWindow();
+                    map = new google.maps.Map(
+                        document.getElementById("map"), { center: closeLoc, zoom: 9 });
+                    var marker = new google.maps.Marker({
+                        position: myLatLng,
+                        map: map,
+                        title: auxquery
+                    });
+
+                })
+
                 // run the google map
-                initMap(mylocation.lat, mylocation.lng);
+                // initMap(mylocation.lat, mylocation.lng);
             })
     })
 
+    // Function to get distance from 2 lat-lng locations
+
+    function distance(lat1, lon1, lat2, lon2, unit) {
+        if ((lat1 == lat2) && (lon1 == lon2)) {
+            return 0;
+        }
+        else {
+            var radlat1 = Math.PI * lat1 / 180;
+            var radlat2 = Math.PI * lat2 / 180;
+            var theta = lon1 - lon2;
+            var radtheta = Math.PI * theta / 180;
+            var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+            if (dist > 1) {
+                dist = 1;
+            }
+            dist = Math.acos(dist);
+            dist = dist * 180 / Math.PI;
+            dist = dist * 60 * 1.1515;
+            if (unit == "K") { dist = dist * 1.609344 }
+            if (unit == "N") { dist = dist * 0.8684 }
+            return dist;
+        }
+    }
+
     // ? google maps functions
 
-    var map;
-    var service;
-    var infowindow;
+    // var map;
+    // var service;
+    // var infowindow;
 
     // initializing map
-    function initMap(mylat, mylng) {
+    // function initMap(mylat, mylng) {
 
-        var mylocation = new google.maps.LatLng(mylat, mylng);
-        infowindow = new google.maps.InfoWindow();
+    //     var mylocation = new google.maps.LatLng(mylat, mylng);
+    //     infowindow = new google.maps.InfoWindow();
 
-        map = new google.maps.Map(document.getElementById("map"), { center: mylocation, zoom: 10 });
+    //     map = new google.maps.Map(document.getElementById("map"), { center: mylocation, zoom: 10 });
 
-        var request = { query: "Spindletap Brewery", fields: ["name", "geometry"] };
+    //     var request = { query: "Spindletap Brewery", fields: ["name", "geometry"] };
 
-        service = new google.maps.places.PlacesService(map);
+    //     service = new google.maps.places.PlacesService(map);
 
-        service.findPlaceFromQuery(request, function (results, status) {
+    //     service.findPlaceFromQuery(request, function (results, status) {
 
-            if (status === google.maps.places.PlacesServiceStatus.OK) {
+    //         if (status === google.maps.places.PlacesServiceStatus.OK) {
 
-                for (var i = 0; i < results.length; i++) {
+    //             for (var i = 0; i < results.length; i++) {
 
-                    createMarker(results[i]);
-                }
+    //                 createMarker(results[i]);
+    //             }
 
-                map.setCenter(results[0].geometry.location);
-            }
-        });
-    }
+    //             map.setCenter(results[0].geometry.location);
+    //         }
+    //     });
+    // }
 
     // creating marker
-    function createMarker(place) {
+    // function createMarker(place) {
 
-        var marker = new google.maps.Marker({
+    //     var marker = new google.maps.Marker({
 
-            map: map,
-            position: place.geometry.location
-        });
+    //         map: map,
+    //         position: place.geometry.location
+    //     });
 
-        google.maps.event.addListener(marker, 'click', function () {
+    //     google.maps.event.addListener(marker, 'click', function () {
 
-            infowindow.setContent(place.name);
-            infowindow.open(map, this);
-        });
-    }
+    //         infowindow.setContent(place.name);
+    //         infowindow.open(map, this);
+    //     });
+    // }
 
-    if (navigator.geolocation) navigator.geolocation.getCurrentPosition(function (position) {
+    // if (navigator.geolocation) navigator.geolocation.getCurrentPosition(function (position) {
 
-        console.log("google maps stuff: ");
-        console.log(position);
+    //     console.log("google maps stuff: ");
+    //     console.log(position);
 
-        var lat = position.coords.latitude;
-        var lng = position.coords.longitude;
-        console.log("latitude: " + lat);
-        console.log("longitude: " + lng);
+    //     var lat = position.coords.latitude;
+    //     var lng = position.coords.longitude;
+    //     console.log("latitude: " + lat);
+    //     console.log("longitude: " + lng);
 
-        $.get("https://maps.googleapis.com/maps/api/geocode/json?latlng=" + position.coords.latitude + "," + position.coords.longitude + "&sensor=false&key=AIzaSyDw8hFnyQv4weAe34Uhrba3H22o52PYXKc", function (data) {
-            // console.log(data);
-            // console.log(data.results[6].formatted_address);
-        })
-    });
-    else {
-        console.log("geolocation is not supported");
-    }
+    //     $.get("https://maps.googleapis.com/maps/api/geocode/json?latlng=" + position.coords.latitude + "," + position.coords.longitude + "&sensor=false&key=AIzaSyDw8hFnyQv4weAe34Uhrba3H22o52PYXKc", function (data) {
+    //         // console.log(data);
+    //         // console.log(data.results[6].formatted_address);
+    //     })
+    // });
+    // else {
+    //     console.log("geolocation is not supported");
+    // }
 
     // hide and show containers accordingly
     $("#titlediv").hide();
