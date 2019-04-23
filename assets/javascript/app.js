@@ -9,7 +9,7 @@ window.onload = function () {
     $("#beerresultcontainer").hide();
 
     // app version
-    console.log("app v4");
+    console.log("app v5");
 };
 
 // ! beer icon thingy
@@ -80,7 +80,7 @@ $("#current").on("click", function (event) {
                 console.log("city: " + response.location.city);
                 console.log("latitude : " + response.location.lat);
                 console.log("longitude : " + response.location.lng);
-                // console.log("---------------------------------------------");
+                console.log("---------------------------------------------");
 
                 // Store Latitude and Longitude as variables
                 myLat = response.location.lat;
@@ -115,8 +115,8 @@ $("#current").on("click", function (event) {
 
                     // insert google map and stuff
                     var map;
-                    var marker;
-                    var service;
+                    // var marker;
+                    // var service;
                     var infowindow;
                     var myLatLng = { lat: minDistAwayLat, lng: minDistAwayLng };
                     var auxquery = minDistAwayLocName + " " + minDistAwayLocality + ", " + minDistAwayRegion;
