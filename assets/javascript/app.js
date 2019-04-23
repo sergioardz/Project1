@@ -83,8 +83,8 @@ $("#current").on("click", function (event) {
                 console.log("---------------------------------------------");
 
                 // Store Latitude and Longitude as variables
-                // myLat = response.location.lat;
-                // myLng = response.location.lng;
+                myLat = response.location.lat;
+                myLng = response.location.lng;
 
                 // Run a GetJSON from locations.json to get the closest location from current one
                 $.getJSON("assets/json/locations.json", function (response) {
