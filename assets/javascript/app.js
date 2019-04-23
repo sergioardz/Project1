@@ -9,7 +9,7 @@ window.onload = function () {
     $("#beerresultcontainer").hide();
 
     // app version
-    console.log("app v6");
+    console.log("app v7");
 };
 
 // ! beer icon thingy
@@ -354,30 +354,49 @@ let showRandomBeer = function () {
                 if (beer.id === master.data[i].C) {
 
                     // save the location id in a var
-                    locationID = master.data[i].G;
+                    breweryID = master.data[i].F;
                 }
             }
 
-            // json call to the locations file
-            $.getJSON("./assets/json/locations.json", function (response) {
-
-                // iterate the data
+            $.getJSON("assets/json/breweries.json", function (response) {
                 for (i = 0; i < response.data.length; i++) {
-
-                    // find the beer location id 
-                    if (locationID === response.data[i].id) {
-
-                        // update the html
-                        $("#r_wheretobuy").text(response.data[i].locality + ", " + response.data[i].region);
+                    if (breweryID === response.data[i].id) {
+                        console.log("Brewery Name: " + response.data[i].name);
+                        if (response.data[i].nloc > 1) {
+                            locationID = response.data[i].locations[Math.floor(Math.random() * response.data[i].nloc)];
+                            console.log("Location ID: " + locationID);
+                        }
+                        else {
+                            locationID = response.data[i].locations;
+                            console.log("Location ID: " + locationID);
+                        }
                     }
                 }
+
+                // json call to the locations file
+                $.getJSON("./assets/json/locations.json", function (response) {
+
+                    // iterate the data
+                    for (i = 0; i < response.data.length; i++) {
+
+                        // find the beer location id 
+                        if (locationID === response.data[i].id) {
+
+                            // update the html
+                            $("#r_wheretobuy").text(response.data[i].locality + ", " + response.data[i].region);
+                        }
+                    
+                }
+
             })
+
+
         })
 
         // clear the aray
         allLocationIDs = [];
     })
-};
+});
 
 // ! advanced beer hunt container stuff
 $("#beerhunt").on("click", function (event) {
@@ -698,5 +717,9 @@ let cleanDropdowns = function () {
 
     // then fill the category dropdown
     load_json_data("category", "0");
+
+}
+
+    
 
 }
