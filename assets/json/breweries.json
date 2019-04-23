@@ -24,20 +24,9 @@
             "updateDate": "2018-11-02 02:15:01",
             "isMassOwned": "Y",
             "isInBusiness": "Y",
-            "isVerified": "N"
-        },
-        {
-            "id": "rd8LRZ",
-            "name": "Boston Beer Company (Samuel Adams)",
-            "nameShortDisplay": "Boston Beer Company (Samuel Adams)",
-            "isOrganic": "N",
-            "status": "new_unverified",
-            "statusDisplay": "New, Unverified",
-            "createDate": "2018-12-09 18:05:53",
-            "updateDate": "2018-12-09 18:05:53",
-            "isMassOwned": "N",
-            "isInBusiness": "Y",
-            "isVerified": "N"
+            "isVerified": "N",
+            "nloc":12,
+            "locations": ["ZApGug", "doVlXA", "G8EZgb", "sRxNq2", "UlgBzT", "75P08u", "jP7oIL", "LiqcRm", "y2ZQbD", "aMIEke", "Cg12u5", "ozjr3W"]
         },
         {
             "id": "IImUD9",
@@ -60,7 +49,9 @@
             "updateDate": "2018-11-02 02:15:01",
             "isMassOwned": "Y",
             "isInBusiness": "Y",
-            "isVerified": "N"
+            "isVerified": "N",
+            "nloc":7,
+            "locations":["s0WsY3", "4nwOub", "h7fD42", "JRO1DT", "vl6pMu", "EOsuuz", "kDDWiR"]
         },
         {
             "id": "uM2jeT",
@@ -76,7 +67,9 @@
             "updateDate": "2018-11-02 02:15:01",
             "isMassOwned": "N",
             "isInBusiness": "Y",
-            "isVerified": "N"
+            "isVerified": "N",
+            "nloc":1,
+            "locations": "bY0joH"
         },
         {
             "id": "p3YrOa",
@@ -100,7 +93,9 @@
             "updateDate": "2018-11-02 02:15:01",
             "isMassOwned": "N",
             "isInBusiness": "Y",
-            "isVerified": "N"
+            "isVerified": "N",
+            "nloc":1,
+            "locations": "HFQ27P"
         },
         {
             "id": "HaPdSL",
@@ -123,7 +118,9 @@
             "updateDate": "2018-11-02 02:15:01",
             "isMassOwned": "Y",
             "isInBusiness": "Y",
-            "isVerified": "N"
+            "isVerified": "N",
+            "nloc":1,
+            "locations": "9RsQkk"
         },
         {
             "id": "DMU2Kf",
@@ -145,7 +142,9 @@
             "updateDate": "2018-11-02 02:15:01",
             "isMassOwned": "N",
             "isInBusiness": "Y",
-            "isVerified": "N"
+            "isVerified": "N",
+            "nloc":1,
+            "locations": "vd0Jcg"
         },
         {
             "id": "p1tFbP",
@@ -168,7 +167,9 @@
             "updateDate": "2018-11-02 02:15:01",
             "isMassOwned": "N",
             "isInBusiness": "Y",
-            "isVerified": "N"
+            "isVerified": "N",
+            "nloc":1,
+            "locations": "Syl46S"
         },
         {
             "id": "nLsoQ9",
@@ -191,7 +192,9 @@
             "updateDate": "2018-11-02 02:15:01",
             "isMassOwned": "Y",
             "isInBusiness": "Y",
-            "isVerified": "N"
+            "isVerified": "N",
+            "nloc":3,
+            "locations":["C0zPjd", "g2d9B7", "s38mA2"]
         },
         {
             "id": "941OaA",
@@ -214,7 +217,9 @@
             "updateDate": "2018-11-02 02:15:01",
             "isMassOwned": "N",
             "isInBusiness": "Y",
-            "isVerified": "N"
+            "isVerified": "N",
+            "nloc":1,
+            "locations": "UFie4f"
         },
         {
             "id": "yX6twV",
@@ -237,7 +242,9 @@
             "updateDate": "2018-11-02 02:15:01",
             "isMassOwned": "N",
             "isInBusiness": "Y",
-            "isVerified": "N"
+            "isVerified": "N",
+            "nloc":1,
+            "locations": "1eKpO5"
         },
         {
             "id": "hGFVYy",
@@ -259,7 +266,9 @@
             "updateDate": "2018-11-02 02:15:01",
             "isMassOwned": "Y",
             "isInBusiness": "Y",
-            "isVerified": "N"
+            "isVerified": "N",
+            "nloc":1,
+            "locations": "S7YNd3"
         },
         {
             "id": "AqEUBQ",
@@ -282,7 +291,9 @@
             "updateDate": "2018-11-02 02:15:01",
             "isMassOwned": "N",
             "isInBusiness": "Y",
-            "isVerified": "N"
+            "isVerified": "N",
+            "nloc":3,
+            "locations":["awYZlE", "qncYRx", "Db1S1w"]
         },
         {
             "id": "q6vJUK",
@@ -305,7 +316,9 @@
             "updateDate": "2018-11-02 02:15:01",
             "isMassOwned": "N",
             "isInBusiness": "Y",
-            "isVerified": "N"
+            "isVerified": "N",
+            "nloc":3,
+            "locations":["jnSdDd", "I1q8kK", "TkDbDx"]
         },
         {
             "id": "4F7QA9",
@@ -328,7 +341,9 @@
             "updateDate": "2018-11-02 02:15:01",
             "isMassOwned": "N",
             "isInBusiness": "Y",
-            "isVerified": "N"
+            "isVerified": "N",
+            "nloc":1,
+            "locations": "fKk5B1"
         },
         {
             "id": "nHLlnK",
@@ -351,7 +366,9 @@
             "updateDate": "2018-11-02 02:15:01",
             "isMassOwned": "N",
             "isInBusiness": "Y",
-            "isVerified": "N"
+            "isVerified": "N",
+            "nloc":2,
+            "locations":["IaQrxj", "aqLvLE"]
         },
         {
             "id": "TMc6H2",
@@ -374,7 +391,9 @@
             "updateDate": "2018-11-02 02:15:01",
             "isMassOwned": "N",
             "isInBusiness": "Y",
-            "isVerified": "N"
+            "isVerified": "N",
+            "nloc":1,
+            "locations": "MfINpl"
         },
         {
             "id": "DifSi4",
@@ -397,7 +416,9 @@
             "updateDate": "2018-11-02 02:15:01",
             "isMassOwned": "N",
             "isInBusiness": "Y",
-            "isVerified": "N"
+            "isVerified": "N",
+            "nloc":1,
+            "locations": "NbGMT2"
         },
         {
             "id": "VEY3Xa",
@@ -420,7 +441,9 @@
             "updateDate": "2018-11-02 02:15:01",
             "isMassOwned": "N",
             "isInBusiness": "Y",
-            "isVerified": "N"
+            "isVerified": "N",
+            "nloc":1,
+            "locations": "dMbTUT"
         }
     ],
     "status": "success"
