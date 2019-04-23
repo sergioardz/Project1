@@ -110,16 +110,17 @@ $("#current").on("click", function (event) {
                     console.log(minDistAwayRegion);
                     console.log(minDistAwayLat);
                     console.log(minDistAwayLng);
-                    $("#currentcontainer").append("<p>The closest location is in: " + minDawayLity + ", " + minDawayReg + "</p>");
+                    $("#currentcontainer").append("<p>The closest location is in: " + minDistAwayLocality + ", " + minDistAwayRegion + "</p>");
 
                     // insert google map and stuff
                     var map;
+                    var marker;
                     var service;
                     var infowindow;
-                    var myLatLng = { lat: minDawayLat, lng: minDawayLng };
-                    var auxquery = minDawayLoc + " " + minDawayLity + ", " + minDawayReg;
+                    var myLatLng = { lat: minDistAwayLat, lng: minDistAwayLng };
+                    var auxquery = minDistAwayLocName + " " + minDistAwayLocality + ", " + minDistAwayRegion;
                     console.log(auxquery);
-                    var closeLoc = new google.maps.LatLng(minDawayLat, minDawayLng);
+                    var closeLoc = new google.maps.LatLng(minDistAwayLat, minDistAwayLng);
                     infowindow = new google.maps.InfoWindow();
                     map = new google.maps.Map(
                         document.getElementById("map"), { center: closeLoc, zoom: 9 });
