@@ -313,7 +313,7 @@ $("#current").on("click", function (event) {
         $.ajax({
             url: "https://geo.ipify.org/api/v1",
             dataType: "json",
-            data: { apiKey: "at_knMW8P4hXMF72fVn0z8jG2ZnwPsAy", ipAddress: myPublicIp }
+            data: { apiKey: "", ipAddress: myPublicIp }
         })
             .done(function (response) {
 
@@ -395,7 +395,7 @@ $("#current").on("click", function (event) {
         console.log("latitude: " + lat);
         console.log("longitude: " + lng);
 
-        $.get("https://maps.googleapis.com/maps/api/geocode/json?latlng=" + position.coords.latitude + "," + position.coords.longitude + "&sensor=false&key=AIzaSyDw8hFnyQv4weAe34Uhrba3H22o52PYXKc", function (data) {
+        $.get("https://maps.googleapis.com/maps/api/geocode/json?latlng=" + position.coords.latitude + "," + position.coords.longitude + "&sensor=false&" + "key_goes_here", function (data) {
             // console.log(data);
             // console.log(data.results[6].formatted_address);
         })
