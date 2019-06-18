@@ -21,7 +21,7 @@ body {
 }
 
 #css_slogan {
-    font-size: 25px;
+    font-size: 23px;
 }
 
 /* ! beer icon on the top left corner (home button) */
@@ -73,4 +73,11 @@ body {
     #css_slogan {
         font-size: 22px;
     }
+}
+
+/* ! map  */
+
+#map {
+    height: 300px;
+    width: 450px;
 }

@@ -1,2 +1,1 @@
-# Project1
-Project 1
+# beer_hunters
